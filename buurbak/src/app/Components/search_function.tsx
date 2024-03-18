@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { TrailerList } from '../Types/TrailerList'
+import { TrailerType } from '../Types/TrailerType'
 const DEFAULT_CENTER = {
   lat: 52.131401,
   lng: 5.42747,
@@ -9,7 +10,10 @@ export default function searchOrFilter() {
   const [data, setData] = useState<TrailerList[]>([])
   const [isLoading, setLoading] = useState(true)
   const [searchTerm, setSearchTerm] = useState('')
-  const [activeCategory, setActiveCategory] = useState('')
+  const [filterDate, setFilterDate] = useState<Date>()
+  const [filterType, setFilterType] = useState<TrailerType>()
+  const [filterPrice, setFilterPrice] = useState<number>()
+  const [filterDimensions, setFilterDimensions] = useState()
   const [centerCoordinates, setCenterCoordinates] = useState(DEFAULT_CENTER)
   const [filteredTrailers, setFilteredTrailers] = useState<TrailerList[]>([])
 
@@ -50,7 +54,8 @@ export default function searchOrFilter() {
           trailer.cityAddress.city
             .toLowerCase()
             .includes(searchTerm.toLowerCase())) &&
-        (!activeCategory || trailer.trailerType.name === activeCategory)
+        (!filterType || trailer.trailerType.name === filterType.name) &&
+        (!filterPrice || trailer.price <= filterPrice)
       )
     })
     if (navigator.geolocation) {
@@ -83,7 +88,7 @@ export default function searchOrFilter() {
     }
 
     setFilteredTrailers(filteredAndReordered)
-  }, [data, searchTerm, activeCategory, centerCoordinates])
+  }, [data, searchTerm, filterType, centerCoordinates])
 
   return (
     <div>
@@ -91,9 +96,3 @@ export default function searchOrFilter() {
     </div>
   );
 }
-
-  function compareValues<T>(value1: T, value2: T, otherValue1: T, otherValue2: T) {
-    if (value1 !== value2 && otherValue1 !== otherValue2){
-        
-    }
-} 
