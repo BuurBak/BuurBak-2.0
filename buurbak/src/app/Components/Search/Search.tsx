@@ -3,7 +3,10 @@ import React from "react";
 export default function Search() {
   return (
     <div className="relative w-full text-gray-600">
-      <input className="bg-white h-10 px-5 pr-10 w-full rounded-full text-sm focus:outline-none border-solid border-2 border-gray-500" />
+      <input
+        placeholder="Zoeken"
+        className="bg-white h-10 px-5 pr-10 w-full rounded text-sm focus:outline-none border-solid border-2 border-gray-500"
+      />
       <button type="submit" className="absolute right-0 top-0 mt-3 mr-4">
         <svg
           className="h-4 w-4 fill-current"

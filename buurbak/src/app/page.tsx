@@ -1,11 +1,13 @@
+"use client";
+
 import Search from "./Components/Search/Search";
+import Filter from "./Components/Filter/Filter";
 
 export default function Home() {
   return (
-    <main className="flex flex-row mx-auto">
-      <div className="mr-8">hier komt de app</div>
+    <main className="flex flex-row h-screen w-screen bg-gray-200">
       <div>
-        <Search />
+        <Filter />
       </div>
     </main>
   );
