@@ -6,7 +6,7 @@ const DEFAULT_CENTER = {
   lng: 5.42747,
 }
 
-export default function searchOrFilter() {
+export default function SearchOrFilter() {
   const [data, setData] = useState<TrailerList[]>([])
   const [isLoading, setLoading] = useState(true)
   const [searchTerm, setSearchTerm] = useState('')
@@ -16,7 +16,7 @@ export default function searchOrFilter() {
   const [filterDimensions, setFilterDimensions] = useState()
   const [centerCoordinates, setCenterCoordinates] = useState(DEFAULT_CENTER)
   const [filteredTrailers, setFilteredTrailers] = useState<TrailerList[]>([])
-
+// Berekent de afstand van de aanhangwagen vanaf jou locatie
   const haversineDistance = (coords1: any, coords2: any) => {
     const R = 6371 // Radius of the Earth in km
     const dLat = (coords2.lat - coords1.lat) * (Math.PI / 180)
