@@ -30,7 +30,7 @@ function RangeSlider() {
 
   return (
     <div className="flex justify-center items-center">
-      <div className="relative max-w-xl w-full">
+      <div className=" max-w-xl w-full">
         <div>
           <input
             type="range"
