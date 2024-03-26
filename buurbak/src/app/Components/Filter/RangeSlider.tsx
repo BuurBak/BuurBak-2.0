@@ -61,12 +61,12 @@ function RangeSlider() {
             ></div>
 
             <div
-              className="absolute z-30 w-6 h-6 top-0 left-0 bg-orange-300 rounded-full -mt-2 -ml-1 cursor-pointer"
+              className="absolute z-30 w-6 h-6 top-0 left-0 bg-orange-500 rounded-full -mt-2 -ml-1 cursor-pointer"
               style={{ left: `${minThumb}%` }}
             ></div>
 
             <div
-              className="absolute z-30 w-6 h-6 top-0 right-0 bg-orange-300 rounded-full -mt-2 -mr-3 cursor-pointer"
+              className="absolute z-30 w-6 h-6 top-0 right-0 bg-orange-500 rounded-full -mt-2 -mr-3 cursor-pointer"
               style={{ right: `${maxThumb}%` }}
             ></div>
           </div>
